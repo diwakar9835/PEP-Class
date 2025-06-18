@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Input</title>
+</head>
+<body>
+
+  <input id="textInput">
+  <button onclick="showText()">Submit</button>
+
+  <div id="result"></div>
+
+  <script>
+    function showText() {
+      var value = document.getElementById("textInput").value;
+      document.getElementById("result").innerHTML = value;
+    }
+  </script>
+
+</body>
+</html>
