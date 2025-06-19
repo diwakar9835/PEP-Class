@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Three Input Boxes</title>
+</head>
+<body>
+
+  <h3>Enter Values</h3>
+
+  <input class="inputBox" type="text" placeholder="Input 1"><br><br>
+  <input class="inputBox" type="text" placeholder="Input 2"><br><br>
+  <input class="inputBox" type="text" placeholder="Input 3"><br><br>
+
+  <button onclick="showValues()">Submit</button>
+
+  <div class="outputBox"></div>
+  <div class="outputBox"></div>
+  <div class="outputBox"></div>
+
+  <script>
+    function showValues() {
+      var inputs = document.getElementsByClassName("inputBox");
+      var outputs = document.getElementsByClassName("outputBox");
+
+      for (var i = 0; i < inputs.length; i++) {
+        outputs[i].innerHTML = "Input " + (i + 1) + ": " + inputs[i].value;
+      }
+    }
+  </script>
+
+</body>
+</html>
