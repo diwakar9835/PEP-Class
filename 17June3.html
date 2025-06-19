@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input with Class</title>
+</head>
+<body>
+
+  <input class="inputBox" type="text"/>
+  <button onclick="showValue()">Submit</button>
+
+  <div class="outputBox"></div>
+
+  <script>
+    function showValue() {
+      var inputValue = document.getElementsByClassName("inputBox")[0].value;
+      document.getElementsByClassName("outputBox")[0].innerHTML = "You entered: " + inputValue;
+    }
+  </script>
+
+</body>
+</html>
