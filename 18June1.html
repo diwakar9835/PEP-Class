@@ -1,0 +1,26 @@
+// Color Changing game (Mini Project)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Changer Game</title>
+    <style>
+        #colorBox {
+            width: 50px;
+            height: 50px;
+            background-color: #FF0000;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+     <div id="colorBox" onclick="changeColor()"></div>
+    <script>
+        function changeColor() {
+            const box = document.getElementById('colorBox');
+            box.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
+        }
+    </script>
+</body>
+</html>
