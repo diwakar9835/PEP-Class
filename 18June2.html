@@ -1,0 +1,66 @@
+// Number Guessing Game
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+    <style>
+        .game-container {
+            text-align: center;
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+        input {
+            padding: 8px;
+            margin: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Number Guessing Game</h2>
+        <p>Guess a number between 1-10:</p>
+        <input type="number" id="guessInput" min="1" max="10">
+        <button onclick="checkGuess()">Check</button>
+        <button onclick="startGame()">Start</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let randomNumber;
+
+        function startGame() {
+            randomNumber = Math.floor(Math.random() * 10) + 1;
+            document.getElementById('message').textContent = 'Game started! Try guessing...';
+            document.getElementById('guessInput').value = '';
+        }
+
+        function checkGuess() {
+            const guess = parseInt(document.getElementById('guessInput').value);
+            const messageElement = document.getElementById('message');
+            
+            if (!randomNumber) {
+                messageElement.textContent = 'Click Start first!';
+                return;
+            }
+            
+            if (isNaN(guess)) {
+                messageElement.textContent = 'Please enter a number';
+                return;
+            }
+
+            if (guess === randomNumber) {
+                messageElement.textContent = `Correct! The number was ${randomNumber}`;
+            } else if (guess < randomNumber) {
+                messageElement.textContent = 'Too low! Try again';
+            } else {
+                messageElement.textContent = 'Too high! Try again';
+            }
+        }
+    </script>
+</body>
+</html>
