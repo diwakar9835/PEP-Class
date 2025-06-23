@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+</head>
+<body>
+    <div class="dice-box" id="diceBox">?</div>
+    <button class="btn" onclick="rollDice()">Roll Dice</button>
+    <div class="score" id="scoreDisplay">Your score is: -</div>
+
+    <script>
+        function rollDice() {
+            const roll = Math.floor(Math.random() * 6) + 1;
+            document.getElementById('diceBox').textContent = roll;
+                        document.getElementById('scoreDisplay').textContent = 
+                `Your score is: ${roll}`;
+        }
+    </script>
+</body>
+</html>
