@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do Application</title>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <input type="text" id="todoInput" placeholder="Add a new task">
+    <button onclick="addTodo()">Add</button>
+    <ul id="todoList"></ul>
+
+    <script>
+        const todos = [];
+
+        function renderTodos() {
+            const list = document.getElementById('todoList');
+            list.innerHTML = '';
+            todos.forEach((todo, idx) => {
+                const li = document.createElement('li');
+                li.textContent = todo;
+                const btn = document.createElement('button');
+                btn.textContent = 'Delete';
+                btn.onclick = () => {
+                    todos.splice(idx, 1);
+                    renderTodos();
+                };
+                li.appendChild(btn);
+                list.appendChild(li);
+            });
+        }
+
+        function addTodo() {
+            const input = document.getElementById('todoInput');
+            const value = input.value.trim();
+            if (value) {
+                todos.push(value);
+                input.value = '';
+                renderTodos();
+            }
+        }
+    </script>
+</body>
+</html>
