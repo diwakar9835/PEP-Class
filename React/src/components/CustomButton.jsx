@@ -15,6 +15,7 @@ const CustomButton = (prop) => {
       {prop.buttonData.name}
     </button>
   );
+    
 };
 
 export default CustomButton;
