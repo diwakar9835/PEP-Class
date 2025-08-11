@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const WeatherCard = ({ data }) => {
@@ -30,3 +31,4 @@ const WeatherCard = ({ data }) => {
 };
 
 export default WeatherCard;
+
